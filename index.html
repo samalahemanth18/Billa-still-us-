@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Still Us 💛</title>
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+    overflow-x: hidden;
+    color: #333;
+}
+
+/* Floating hearts animation */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    animation: floatUp 8s linear infinite;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+.section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    max-width: 700px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+h1 {
+    font-size: 40px;
+    color: #ff4b6e;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+button {
+    margin-top: 25px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #ff4b6e;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #e63e5c;
+}
+
+.hidden {
+    display: none;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* Scroll Section Colors */
+#section2 { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
+#section3 { background: linear-gradient(135deg, #84fab0, #8fd3f4); }
+#section4 { background: linear-gradient(135deg, #fccb90, #d57eeb); }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    font-size: 14px;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Section 1 -->
+<div class="section">
+    <div class="card">
+        <h1>Hey You ❤️</h1>
+        <p>
+            I don’t know what changed…  
+            Maybe nothing.  
+            Maybe everything.  
+            But I just wanted to say —  
+            I miss our 2AM talks.
+        </p>
+        <button onclick="reveal1()">Click if you still smile at my texts 😊</button>
+        <p id="msg1" class="hidden">
+            No pressure. No drama. Just honesty —  
+            I care about you.
+        </p>
+    </div>
+</div>
+
+<!-- Section 2 -->
+<div class="section" id="section2">
+    <div class="card">
+        <h1>About Yesterday</h1>
+        <p>
+            When you said "bye" at 11:49 PM…  
+            It felt different.  
+            Not wrong. Just… different.
+        </p>
+        <button onclick="reveal2()">Tap Here</button>
+        <p id="msg2" class="hidden">
+            If something is bothering you,  
+            you don’t have to handle it alone.
+        </p>
+    </div>
+</div>
+
+<!-- Section 3 -->
+<div class="section" id="section3">
+    <div class="card">
+        <h1>About Us</h1>
+        <p>
+            I don’t want the old days back.  
+            I want better days.  
+            More mature. More understanding.  
+            Still us — just stronger.
+        </p>
+        <button onclick="reveal3()">One More Thing 💛</button>
+        <p id="msg3" class="hidden">
+            I’m here. Not to question you.  
+            Not to pressure you.  
+            Just to stay.
+        </p>
+    </div>
+</div>
+
+<!-- Section 4 -->
+<div class="section" id="section4">
+    <div class="card">
+        <h1>Final Message</h1>
+        <p>
+            If you’re having mood swings, bad days,  
+            or just feeling different —  
+            it’s okay.
+        </p>
+        <button onclick="reveal4()">Last Click 🌙</button>
+        <p id="msg4" class="hidden">
+            Whether it’s 11:49 PM or 2:00 AM…  
+            I still value our conversations.  
+            And I still value you.
+        </p>
+    </div>
+</div>
+
+<footer>
+    Made with honesty 💛
+</footer>
+
+<script>
+function reveal1(){ document.getElementById("msg1").style.display="block"; }
+function reveal2(){ document.getElementById("msg2").style.display="block"; }
+function reveal3(){ document.getElementById("msg3").style.display="block"; }
+function reveal4(){ document.getElementById("msg4").style.display="block"; }
+
+/* Floating hearts generator */
+setInterval(function(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "💛";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 8000);
+}, 800);
+</script>
+
+</body>
+</html>
